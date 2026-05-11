@@ -1,0 +1,258 @@
+.reveal-on-load {
+  opacity: 0;
+  animation: heroRise 1.35s var(--ease-luxury) 0.45s forwards;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translate3d(0, 2rem, 0);
+  transition: opacity 0.9s var(--ease-luxury), transform 0.9s var(--ease-luxury);
+  will-change: opacity, transform;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+.loader-name {
+  animation: softPulse 2.6s ease-in-out infinite;
+}
+
+.loader-divider {
+  animation: shimmerLine 2.4s ease-in-out infinite;
+}
+
+.watercolor {
+  animation: watercolorDrift 24s ease-in-out infinite;
+}
+
+.wash-b {
+  animation-delay: -7s;
+  animation-duration: 28s;
+}
+
+.wash-c {
+  animation-delay: -13s;
+  animation-duration: 22s;
+}
+
+.wash-d {
+  animation-delay: -17s;
+  animation-duration: 30s;
+}
+
+.hero-calligraphy {
+  opacity: 0;
+  animation: calligraphyFade 2s var(--ease-luxury) 0.85s forwards;
+}
+
+.lantern-shell {
+  animation: riseLantern 4.8s var(--ease-luxury) forwards;
+}
+
+.lantern-shell .lantern {
+  animation: floatIdle 6.8s ease-in-out 4.8s infinite;
+}
+
+.lantern-one {
+  animation-delay: 0.35s;
+}
+
+.lantern-one .lantern {
+  animation-duration: 7.2s;
+}
+
+.lantern-two {
+  animation-delay: 0.9s;
+}
+
+.lantern-two .lantern {
+  animation-delay: 5.7s;
+  animation-duration: 8.4s;
+}
+
+.lantern-three {
+  animation-delay: 0.6s;
+}
+
+.lantern-three .lantern {
+  animation-delay: 5.4s;
+  animation-duration: 7.8s;
+  animation-name: floatIdleReverse;
+}
+
+.lantern-four {
+  animation-delay: 1.15s;
+}
+
+.lantern-four .lantern {
+  animation-delay: 5.95s;
+  animation-duration: 9s;
+  animation-name: floatIdleReverse;
+}
+
+.lantern::after {
+  animation: lanternGlow 4.8s ease-in-out infinite;
+}
+
+.scroll-indicator {
+  opacity: 0;
+  animation: fadeIn 1.2s ease 1.7s forwards;
+}
+
+.scroll-mouse span {
+  animation: scrollDot 2.2s ease-in-out infinite;
+}
+
+.story-copy {
+  animation: storyGlow 7s ease-in-out infinite;
+}
+
+.count-num.changed {
+  animation: numberLift 0.42s var(--ease-luxury);
+}
+
+@keyframes heroRise {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 2.2rem, 0) scale(0.985);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+}
+
+@keyframes calligraphyFade {
+  from {
+    opacity: 0;
+    transform: translate3d(1rem, -0.75rem, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes softPulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.58; }
+}
+
+@keyframes shimmerLine {
+  0%, 100% {
+    opacity: 0.35;
+    transform: scaleX(0.72);
+  }
+  50% {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+}
+
+@keyframes watercolorDrift {
+  0%, 100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  33% {
+    transform: translate3d(1.8rem, -1.1rem, 0) scale(1.04);
+  }
+  66% {
+    transform: translate3d(-1.2rem, 1.3rem, 0) scale(0.98);
+  }
+}
+
+@keyframes riseLantern {
+  0% {
+    opacity: 0;
+    transform: translate3d(var(--rise-x, 0), 48vh, 0) scale(0.88);
+  }
+  42% {
+    opacity: var(--mid-opacity, 0.68);
+  }
+  76% {
+    opacity: var(--rest-opacity, 0.8);
+    transform: translate3d(calc(var(--rest-x, 0) * 0.72), calc(var(--rest-y, 0) - 1.2vh), 0) scale(calc(var(--rest-scale, 1) * 1.015));
+  }
+  100% {
+    opacity: var(--rest-opacity, 0.8);
+    transform: translate3d(var(--rest-x, 0), var(--rest-y, 0), 0) scale(var(--rest-scale, 1));
+  }
+}
+
+@keyframes floatIdle {
+  0%, 100% {
+    transform: translate3d(0, 0, 0) rotate(-1.2deg);
+  }
+  50% {
+    transform: translate3d(0.55rem, -0.7rem, 0) rotate(1.4deg);
+  }
+}
+
+@keyframes floatIdleReverse {
+  0%, 100% {
+    transform: translate3d(0, 0, 0) rotate(1.1deg);
+  }
+  50% {
+    transform: translate3d(-0.5rem, -0.65rem, 0) rotate(-1.3deg);
+  }
+}
+
+@keyframes lanternGlow {
+  0%, 100% {
+    opacity: 0.32;
+    transform: scale(0.92);
+  }
+  50% {
+    opacity: 0.76;
+    transform: scale(1.08);
+  }
+}
+
+@keyframes scrollDot {
+  0% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    opacity: 0;
+    transform: translate3d(0, 0.75rem, 0);
+  }
+}
+
+@keyframes storyGlow {
+  0%, 100% {
+    filter: drop-shadow(0 0 0 rgba(201, 168, 76, 0));
+  }
+  50% {
+    filter: drop-shadow(0 20px 45px rgba(201, 168, 76, 0.12));
+  }
+}
+
+@keyframes numberLift {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -0.6rem, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
